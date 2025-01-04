@@ -20,7 +20,9 @@ def Bit_Plane_Slicing():
             file_bytes = uploaded_file.read()
             
             # Tạo payload và gửi request đến API
-            files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+            #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+            uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+            files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
             response = requests.post(API_URL, files=files)
             
             if response.status_code == 200:
@@ -65,10 +67,12 @@ def negative_image():
         if st.button("Generate Negative Image"):
             try:
                 # Đọc nội dung file
-                file_bytes = uploaded_file.read()
+                #file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 response = requests.post(API_URL, files=files)
 
                 if response.status_code == 200:
@@ -115,7 +119,9 @@ def threshold_processing():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"threshold": threshold_value}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -160,7 +166,9 @@ def logarithmic():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 response = requests.post(API_URL, files=files)
 
                 if response.status_code == 200:
@@ -207,7 +215,9 @@ def powerlaw():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"gamma": gamma}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -259,7 +269,9 @@ def piecewise_linear():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"r1": r1, "s1": s1, "r2": r2, "s2": s2}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -304,7 +316,9 @@ def Histogram_Equalization():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 response = requests.post(API_URL, files=files)
 
                 if response.status_code == 200:
@@ -353,7 +367,9 @@ def morphological_erosion():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"kernel_size": kernel_size}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -398,11 +414,9 @@ def morphological_dilation():
 
         if st.button("Apply Morphological Dilation"):
             try:
-                # Đọc nội dung file
-                file_bytes = uploaded_file.read()
 
-                # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"kernel_size": kernel_size}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -446,11 +460,11 @@ def morphological_opening():
 
         if st.button("Apply Morphological Opening"):
             try:
-                # Đọc nội dung file
-                file_bytes = uploaded_file.read()
+                
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"kernel_size": kernel_size}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -498,7 +512,9 @@ def morphological_closing():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"kernel_size": kernel_size}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -542,7 +558,9 @@ def otsu_threshold():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 response = requests.post(API_URL, files=files)
 
                 if response.status_code == 200:
@@ -589,7 +607,9 @@ def mean_filter():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"size": kernel_size}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -638,7 +658,9 @@ def median_filter():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"size": kernel_size}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -684,15 +706,17 @@ def normalized_correlation():
 
         if st.button("Apply Normalized Correlation"):
             try:
-                # Đọc nội dung file
-                image_bytes = uploaded_file.read()
-                template_bytes = uploaded_template.read()
-
+                # Đảm bảo con trỏ file ở đầu
+                uploaded_file.seek(0) 
+                uploaded_template.seek(0) 
                 # Tạo payload và gửi request đến API
                 files = {
-                    "image": (uploaded_file.name, image_bytes, "image/png"),
-                    "template": (uploaded_template.name, template_bytes, "image/png"),
+                    "image": (uploaded_file.name, uploaded_file, uploaded_file.type),
+                    "template": (uploaded_template.name, uploaded_template, uploaded_template.type),
                 }
+                
+                 
+            
                 response = requests.post(API_URL, files=files)
 
                 if response.status_code == 200:
@@ -735,7 +759,9 @@ def sharpening_laplacian():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 response = requests.post(API_URL, files=files)
 
                 if response.status_code == 200:
@@ -810,12 +836,15 @@ def apply_frequency_filter():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {
                     "filter_type": filter_type,
                     "cutoff": cutoff,
                     "order": order,
                 }
+                
                 response = requests.post(API_URL, files=files, data=data)
 
                 if response.status_code == 200:
@@ -865,7 +894,9 @@ def add_gaussian_noise():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"mean": mean, "sigma": sigma}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -910,7 +941,9 @@ def add_uniform_noise():
             file_bytes = uploaded_file.read()
             
             # Tạo payload và gửi request tới API
-            files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+            #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+            uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+            files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
             data = {"low": low, "high": high}
             response = requests.post(API_URL, files=files, data=data)
             
@@ -958,7 +991,9 @@ def add_salt_pepper_noise():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 data = {"salt_prob": salt_prob, "pepper_prob": pepper_prob}
                 response = requests.post(API_URL, files=files, data=data)
 
@@ -1015,14 +1050,17 @@ def histogram_matching():
         if st.button("Perform Histogram Matching"):
             try:
                 # Đọc nội dung file
-                source_image_bytes = uploaded_source_image.read()
-                reference_image_bytes = uploaded_reference_image.read()
+                #source_image_bytes = uploaded_source_image.read()
+                #reference_image_bytes = uploaded_reference_image.read()
 
+                uploaded_source_image.seek(0)  # Đảm bảo con trỏ file ở đầu
+                uploaded_reference_image.seek(0)
                 # Tạo payload và gửi request đến API
                 files = {
-                    "source_image": (uploaded_source_image.name, source_image_bytes, "image/png"),
-                    "reference_image": (uploaded_reference_image.name, reference_image_bytes, "image/png"),
+                    "source_image": (uploaded_source_image.name, uploaded_source_image, uploaded_source_image.type),
+                    "reference_image": (uploaded_reference_image.name, uploaded_reference_image, uploaded_reference_image.type),
                 }
+                
                 response = requests.post(API_URL, files=files)
 
                 if response.status_code == 200:
@@ -1065,7 +1103,9 @@ def compression_rle():
                 file_bytes = uploaded_file.read()
 
                 # Tạo payload và gửi request đến API
-                files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+                uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+                files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
                 response = requests.post(API_URL, files=files)
 
                 if response.status_code == 200:
@@ -1109,7 +1149,9 @@ def jpeg_process():
             file_bytes = uploaded_file.read()
             
             # Tạo payload và gửi request tới API
-            files = {"image": (uploaded_file.name, file_bytes, "image/jpeg")}
+            #files = {"image": (uploaded_file.name, file_bytes, "image/jpeg")}
+            uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+            files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
             response = requests.post(API_URL, files=files)
             
             if response.status_code == 200:
@@ -1153,7 +1195,9 @@ def hamonic():
             file_bytes = uploaded_file.read()
             
             # Tạo payload và gửi request tới API
-            files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+            #files = {"image": (uploaded_file.name, file_bytes, "image/png")}
+            uploaded_file.seek(0)  # Đảm bảo con trỏ file ở đầu
+            files = {"image": (uploaded_file.name, uploaded_file, uploaded_file.type)}
             data = {"size": size, "Q": Q}
             response = requests.post(API_URL, files=files, data=data)
             
