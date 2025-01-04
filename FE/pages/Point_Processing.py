@@ -17,7 +17,7 @@ selected_algorithm = st.selectbox("Chọn thuật toán:", list(algorithms.keys(
 if selected_algorithm == "Negative Images":
     negative_image()
 
-if selected_algorithm == "ThresholdImage":
+if selected_algorithm == "Threshold Image":
     threshold_processing()
 
 if selected_algorithm == "Logarithmic":
@@ -29,5 +29,5 @@ if selected_algorithm == "PowerLaw":
 if selected_algorithm == "Piecewise":
     piecewise_linear()
 
-if selected_algorithm == "BitplaneSlicing":
+if selected_algorithm == "Bit plane Slicing":
     Bit_Plane_Slicing()
