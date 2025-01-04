@@ -936,6 +936,10 @@ def add_uniform_noise():
 
     # Nút thực hiện
     if uploaded_file and st.button("Thêm Uniform Noise"):
+        st.subheader("Original Image")
+        original_image = Image.open(uploaded_file)
+        st.image(original_image, caption="Original Image", use_column_width=True)
+        
         try:
             # Đọc nội dung file
             file_bytes = uploaded_file.read()
