@@ -787,14 +787,8 @@ def sharpening_laplacian():
 def apply_frequency_filter():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/apply-frequency-filter/"
-
-    st.title("Apply Frequency Filter")
-    st.write("Upload an image and set filter parameters to apply frequency-based filtering.")
-
-    # Tải ảnh lên
-    uploaded_file = st.file_uploader("Upload a grayscale image (JPG/PNG):", type=["jpg", "jpeg", "png"], key="frequency_filter_uploader")
-
-    # Chọn loại bộ lọc
+    
+   # Chọn loại bộ lọc
     filter_type = st.selectbox(
         "Select Filter Type:",
         options=["ideal", "butterworth", "gaussian"],
@@ -802,7 +796,13 @@ def apply_frequency_filter():
         key="filter_type_selectbox"
     )
 
+    st.title("Apply Frequency Filter")
+    st.write("Upload an image and set filter parameters to apply frequency-based filtering.")
 
+    # Tải ảnh lên
+    uploaded_file = st.file_uploader("Upload a grayscale image (JPG/PNG):", type=["jpg", "jpeg", "png"], key="frequency_filter_uploader")
+
+ 
     if uploaded_file:
         # Thiết lập tham số cutoff
         cutoff = st.slider(
@@ -1144,7 +1144,7 @@ def jpeg_process():
     st.write("Tải ảnh lên để thực hiện nén và giải nén JPEG.")
 
     # Widget để tải ảnh
-    uploaded_file = st.file_uploader("Tải ảnh lên (JPG):", type=["jpg", "jpeg"])
+    uploaded_file = st.file_uploader("Tải ảnh lên:", type=["dng", "nef", "cr2", "arw", "orf"])
 
     # Nút xử lý
     if uploaded_file and st.button("Thực hiện JPEG Process"):

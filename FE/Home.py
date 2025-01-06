@@ -5,9 +5,18 @@ from PIL import Image
 import zipfile
 import io
 import base64
+import os
 
 
-st.set_page_config(page_title="Photo Editor", page_icon="📸", layout="wide")
+st.set_page_config(page_title="LightForge", page_icon="https://img.icons8.com/fluency/100/crafty-fox.png", layout="wide")
+
+
+logo = "https://img.icons8.com/fluency/100/crafty-fox.png"
+name_brand = "image/large_lg.png"
+name_brand2 = "image/large_logo.png"
+
+st.logo( name_brand, size="large", icon_image=name_brand2)
+
 
 
 st.markdown(
@@ -55,24 +64,25 @@ st.markdown(
 )
 
 # Header Section
-st.markdown('<div class="header">Online Photo Editor for Everyone</div>', unsafe_allow_html=True)
+st.markdown('<div class="header">Welcome To LightForge <img src="https://img.icons8.com/fluency/95/crafty-fox.png" alt="Logo"></div>', unsafe_allow_html=True)
 st.markdown(
-    '<div class="subheader">Our online photo editor offers everything you need to enhance and edit photos effortlessly. Experience simple photo editing online for free!</div>',
-    unsafe_allow_html=True,
+    '<div class="subheader">Effortlessly process and enhance your photos with our free online editor. Simple, fast, and seamless!</div>',
+   unsafe_allow_html=True,
 )
 
 
 # Button to Edit Photos
 st.markdown(
-    '<div class="button"><a href="/FFT_Filtering" style="text-decoration: none;"><button style="background-color: #0066ff; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Edit Photo for Free</button></a></div>',
+    """
+    <div class="button">
+        <a href="/Fast_Fourier_Transform_Filtering" style="text-decoration: none;">
+            <button style="background-color: #0066ff; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+                Let's start processing your photos
+            </button>
+        </a>
+    </div>
+    """,
     unsafe_allow_html=True,
 )
-
-st.markdown("</div>", unsafe_allow_html=True)
-
-
-
-
-
 
 

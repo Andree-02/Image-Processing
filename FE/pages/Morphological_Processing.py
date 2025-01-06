@@ -2,6 +2,15 @@
 import streamlit as st
 from FE_func import *
 
+st.set_page_config( page_icon="https://img.icons8.com/fluency/100/crafty-fox.png", layout="wide")
+
+
+logo = "https://img.icons8.com/fluency/100/crafty-fox.png"
+name_brand = "image/large_lg.png"
+name_brand2 = "image/large_logo.png"
+
+st.logo( name_brand, size="large", icon_image=name_brand2)
+
 algorithms = {
     "Morphological Erosion": "Áp dụng phép co ảnh (erosion) để loại bỏ các chi tiết nhỏ hoặc làm mỏng đường biên.",
     "Morphological Dilation": "Áp dụng phép giãn ảnh (dilation) để mở rộng các chi tiết hoặc làm dày đường biên.",
@@ -12,7 +21,7 @@ algorithms = {
 
 
 # Widget chọn thuật toán
-selected_algorithm = st.selectbox("Chọn thuật toán:", list(algorithms.keys()))
+selected_algorithm = st.selectbox("Selected Algorithm:", list(algorithms.keys()))
 
 if selected_algorithm == "Morphological Erosion":
     morphological_erosion()

@@ -2,6 +2,16 @@
 import streamlit as st
 from FE_func import *
 
+st.set_page_config( page_icon="https://img.icons8.com/fluency/100/crafty-fox.png", layout="wide")
+
+
+logo = "https://img.icons8.com/fluency/100/crafty-fox.png"
+name_brand = "image/large_lg.png"
+name_brand2 = "image/large_logo.png"
+
+st.logo( name_brand, size="large", icon_image=name_brand2)
+
+
 algorithms = {
     "Mean Filter": "Áp dụng bộ lọc trung bình để làm mịn ảnh bằng cách giảm nhiễu.",
     "Median Filter": "Sử dụng bộ lọc trung vị để giảm nhiễu và bảo toàn cạnh trong ảnh.",
@@ -12,7 +22,7 @@ algorithms = {
 
 
 # Widget chọn thuật toán
-selected_algorithm = st.selectbox("Chọn thuật toán:", list(algorithms.keys()))
+selected_algorithm = st.selectbox("Selected Algorithm:", list(algorithms.keys()))
 
 if selected_algorithm == "Mean Filter":
     mean_filter()
