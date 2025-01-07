@@ -8,7 +8,7 @@ def Bit_Plane_Slicing():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/bit-plane-slicing/"
 
-    st.title("Bit Plane Slicing API")
+    st.header("Bit Plane Slicing API")
     st.write("Upload an image to generate bit-plane sliced images and download them as a zip file.")
 
     # Tải ảnh lên
@@ -52,7 +52,7 @@ def Bit_Plane_Slicing():
 def negative_image():
     API_URL = "http://127.0.0.1:8000/negative-image/"
 
-    st.title("Negative Image Transformation")
+    st.header("Negative Image Transformation")
     st.write("Upload an image to generate its negative transformation.")
 
     # Tải ảnh lên
@@ -99,7 +99,7 @@ def threshold_processing():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/threshold-processing/"
 
-    st.title("Threshold Processing")
+    st.header("Threshold Processing")
     st.write("Upload an image and set the threshold value to apply Threshold Processing.")
 
     # Tải ảnh lên
@@ -148,7 +148,7 @@ def threshold_processing():
 def logarithmic():
     API_URL = "http://127.0.0.1:8000/logarithmic/"
 
-    st.title("Logarithmic Transformation")
+    st.header("Logarithmic Transformation")
     st.write("Upload an image to apply logarithmic transformation and enhance its details.")
 
     # Tải ảnh lên
@@ -195,7 +195,7 @@ def powerlaw():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/powerlaw/"
 
-    st.title("Power Law Transformation")
+    st.header("Power Law Transformation")
     st.write("Upload an image and set the gamma value to apply Power Law Transformation.")
 
     # Tải ảnh lên
@@ -245,7 +245,7 @@ def piecewise_linear():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/piecewise-linear/"
 
-    st.title("Piecewise Linear Transformation")
+    st.header("Piecewise Linear Transformation")
     st.write("Upload an image and set the parameters to apply Piecewise Linear Transformation.")
 
     # Tải ảnh lên
@@ -298,7 +298,7 @@ def Histogram_Equalization():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/histogram-equalization/"
 
-    st.title("Histogram Equalization")
+    st.header("Histogram Equalization")
     st.write("Upload an image to apply histogram equalization and enhance its contrast.")
 
     # Tải ảnh lên
@@ -345,7 +345,7 @@ def morphological_erosion():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/morphological/erosion/"
 
-    st.title("Morphological Erosion")
+    st.header("Morphological Erosion")
     st.write("Upload an image and set the kernel size to apply morphological erosion.")
 
     # Tải ảnh lên
@@ -396,7 +396,7 @@ def morphological_dilation():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/morphological/dilation/"
 
-    st.title("Morphological Dilation")
+    st.header("Morphological Dilation")
     st.write("Upload an image and set the kernel size to apply morphological dilation.")
 
     # Tải ảnh lên
@@ -442,7 +442,7 @@ def morphological_opening():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/morphological/opening/"
 
-    st.title("Morphological Opening")
+    st.header("Morphological Opening")
     st.write("Upload an image and set the kernel size to apply morphological opening.")
 
     # Tải ảnh lên
@@ -490,7 +490,7 @@ def morphological_closing():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/morphological/closing/"
 
-    st.title("Morphological Closing")
+    st.header("Morphological Closing")
     st.write("Upload an image and set the kernel size to apply morphological closing.")
 
     # Tải ảnh lên
@@ -540,7 +540,7 @@ def otsu_threshold():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/otsu-threshold/"
 
-    st.title("Otsu's Thresholding")
+    st.header("Otsu's Thresholding")
     st.write("Upload an image to apply Otsu's Thresholding for automatic binary segmentation.")
 
     # Tải ảnh lên
@@ -587,7 +587,7 @@ def mean_filter():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/mean-filter-manual/"
 
-    st.title("Mean Filter")
+    st.header("Mean Filter")
     st.write("Upload an image and set the kernel size to apply Mean Filter.")
 
     # Tải ảnh lên
@@ -637,7 +637,7 @@ def median_filter():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/median-filter-manual/"
 
-    st.title("Median Filter")
+    st.header("Median Filter")
     st.write("Upload an image and set the kernel size to apply Median Filter.")
 
     # Tải ảnh lên
@@ -686,7 +686,7 @@ def normalized_correlation():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/normalized-correlation-manual/"
 
-    st.title("Normalized Correlation")
+    st.header("Normalized Correlation")
     st.write("Upload an image and a template image to apply Normalized Correlation.")
 
     # Tải ảnh gốc lên
@@ -741,7 +741,7 @@ def sharpening_laplacian():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/sharpening-laplacian/"
 
-    st.title("Sharpening with Laplacian")
+    st.header("Sharpening with Laplacian")
     st.write("Upload an image to apply Laplacian sharpening.")
 
     # Tải ảnh lên
@@ -796,7 +796,7 @@ def apply_frequency_filter():
         key="filter_type_selectbox"
     )
 
-    st.title("Apply Frequency Filter")
+    st.header("Apply Frequency Filter")
     st.write("Upload an image and set filter parameters to apply frequency-based filtering.")
 
     # Tải ảnh lên
@@ -870,7 +870,7 @@ def add_gaussian_noise():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/add-gaussian-noise/"
 
-    st.title("Add Gaussian Noise")
+    st.header("Add Gaussian Noise")
     st.write("Upload an image and set mean and sigma values to add Gaussian noise.")
 
     # Tải ảnh lên
@@ -924,7 +924,7 @@ def add_uniform_noise():
     API_URL = "http://127.0.0.1:8000/add-uniform-noise/"  # Đảm bảo URL API là chính xác
 
     # Tiêu đề ứng dụng
-    st.title("Add Uniform Noise to Image")
+    st.header("Add Uniform Noise to Image")
     st.write("Tải ảnh lên và thêm nhiễu Uniform (Uniform Noise) vào ảnh.")
 
     # Widget tải ảnh
@@ -973,7 +973,7 @@ def add_salt_pepper_noise():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/add-salt-pepper-noise/"
 
-    st.title("Add Salt-and-Pepper Noise")
+    st.header("Add Salt-and-Pepper Noise")
     st.write("Upload an image and set the salt and pepper probabilities to add Salt-and-Pepper noise.")
 
     # Tải ảnh lên
@@ -1024,7 +1024,7 @@ def histogram_matching():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/histogram-matching/"
 
-    st.title("Histogram Matching")
+    st.header("Histogram Matching")
     st.write("Upload a source image and a reference image to perform Histogram Matching.")
 
     # Tải ảnh nguồn (source image) lên
@@ -1089,7 +1089,7 @@ def compression_rle():
     # Địa chỉ API
     API_URL = "http://127.0.0.1:8000/compression-rle/"
 
-    st.title("RLE Compression and Decompression")
+    st.header("RLE Compression and Decompression")
     st.write("Upload an image to perform RLE compression and decompression. The system will display the decompressed image and the RMS value.")
 
     # Tải ảnh lên
@@ -1140,7 +1140,7 @@ def jpeg_process():
     API_URL = "http://127.0.0.1:8000/jpeg-process/"  # Đảm bảo đường dẫn API là chính xác
 
     # Tiêu đề ứng dụng
-    st.title("JPEG Process")
+    st.header("JPEG Process")
     st.write("Tải ảnh lên để thực hiện nén và giải nén JPEG.")
 
     # Widget để tải ảnh
@@ -1181,7 +1181,7 @@ def hamonic():
     API_URL = "http://127.0.0.1:8000/contra-harmonic-filter/"  # Đảm bảo URL API chính xác
 
     # Tiêu đề ứng dụng
-    st.title("Contra-Harmonic Mean Filter")
+    st.header("Contra-Harmonic Mean Filter")
     st.write("Tải ảnh lên và áp dụng bộ lọc trung bình nghịch đảo (Contra-Harmonic Mean Filter).")
 
     # Widget tải ảnh
