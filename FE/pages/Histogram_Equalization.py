@@ -1,6 +1,7 @@
 # Danh sách thuật toán
 import streamlit as st
 from FE_func import *
+from func_cv2 import *
 st.set_page_config(page_title="LightForge", page_icon="https://img.icons8.com/fluency/100/crafty-fox.png", layout="wide")
 
 logo = "https://img.icons8.com/fluency/100/crafty-fox.png"
@@ -19,7 +20,7 @@ with tab1:
     }
 
     # Widget chọn thuật toán
-    selected_algorithm = st.selectbox("Selected Algorithm:", list(algorithms.keys()))
+    selected_algorithm = st.selectbox("Selected Algorithm:", list(algorithms.keys()),key="algorithm1")
 
 
     if selected_algorithm == "Histogram Equalization":
@@ -31,8 +32,21 @@ with tab1:
     
 with tab2:
     st.title("OpenCV Processing")
-    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
+    
+    algorithms2 = {
+    "Histogram Equalization": "Cải thiện độ tương phản của ảnh thông qua phân bổ lại histogram.",
+    "Histogram Matching": "Điều chỉnh histogram của ảnh để phù hợp với ảnh tham chiếu."
+    }
 
+    # Widget chọn thuật toán
+    selected_algorithm = st.selectbox("Selected Algorithm:", list(algorithms2.keys()), key="algorithm2")
+
+
+    if selected_algorithm == "Histogram Equalization":
+        histogram_equalcv2()
+    if selected_algorithm == "Histogram Matching":
+        histo_matching_cv2()
+    
 
 
  

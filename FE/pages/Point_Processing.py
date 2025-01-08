@@ -1,6 +1,7 @@
 # Danh sách thuật toán
 import streamlit as st
 from FE_func import *
+from func_cv2 import *
 
 st.set_page_config(page_title="LightForge", page_icon="https://img.icons8.com/fluency/100/crafty-fox.png", layout="wide")
 
@@ -47,7 +48,19 @@ with tab1:
     
 with tab2:
     st.title("OpenCV Processing")
-    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
+    algorithms = {
+    "Threshold Image": "Phân ngưỡng để chuyển đổi ảnh thành ảnh nhị phân dựa trên giá trị ngưỡng.",
+    "Bit plane Slicing": "Phân tích và hiển thị từng mặt phẳng bit của ảnh."
+    }
+
+    # Widget chọn thuật toán
+    selected_algorithm = st.selectbox("Selected Algorithm:", list(algorithms.keys()))
+
+    if selected_algorithm == "Threshold Image":
+        thresholding_cv2()
+
+    if selected_algorithm == "Bit plane Slicing":
+        bit_plane_slicing_cv2()
 
 
 

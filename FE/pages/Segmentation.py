@@ -1,6 +1,8 @@
 # Danh sách thuật toán
 import streamlit as st
 from FE_func import *
+from func_cv2 import *
+
 
 st.set_page_config(page_title="LightForge", page_icon="https://img.icons8.com/fluency/100/crafty-fox.png", layout="wide")
 
@@ -19,6 +21,6 @@ with tab1:
     
 with tab2:
     st.title("OpenCV Processing")
-    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
+    otsu_cv2()
 
 

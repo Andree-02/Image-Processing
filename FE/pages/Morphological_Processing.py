@@ -1,6 +1,7 @@
 # Danh sách thuật toán
 import streamlit as st
 from FE_func import *
+from func_cv2 import *
 
 st.set_page_config(page_title="LightForge", page_icon="https://img.icons8.com/fluency/100/crafty-fox.png", layout="wide")
 
@@ -41,7 +42,27 @@ with tab1:
     
 with tab2:
     st.title("OpenCV Processing")
-    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
+    algorithms = {
+    "Morphological Erosion": "Áp dụng phép co ảnh (erosion) để loại bỏ các chi tiết nhỏ hoặc làm mỏng đường biên.",
+    "Morphological Dilation": "Áp dụng phép giãn ảnh (dilation) để mở rộng các chi tiết hoặc làm dày đường biên.",
+    "Morphological Opening": "Áp dụng phép mở ảnh (opening) để loại bỏ nhiễu nhỏ và giữ lại cấu trúc chính.",
+    "Morphological Closing": "Áp dụng phép đóng ảnh (closing) để lấp đầy lỗ hổng nhỏ và làm mịn đường biên."
+    }
+
+
+    # Widget chọn thuật toán
+    selected_algorithm = st.selectbox("Selected Algorithm:", list(algorithms.keys()), key="hello")
+
+    if selected_algorithm == "Morphological Erosion":
+        Erosion_cv2()
+        
+    if selected_algorithm == "Morphological Dilation":
+        Dilation_cv2()
+    if selected_algorithm == "Morphological Opening":
+        opening_cv2()
+
+    if selected_algorithm == "Morphological Closing":
+        clossing_cv2()
 
 
 

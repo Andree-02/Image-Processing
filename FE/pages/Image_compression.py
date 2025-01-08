@@ -2,6 +2,7 @@
 # Danh sách thuật toán
 import streamlit as st
 from FE_func import *
+from func_cv2 import *
 
 st.set_page_config(page_title="LightForge", page_icon="https://img.icons8.com/fluency/100/crafty-fox.png", layout="wide")
 
@@ -32,7 +33,21 @@ with tab1:
     
 with tab2:
     st.title("OpenCV Processing")
-    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
+    
+    algorithms = {
+    "JPEG Process": "Thực hiện nén và giải nén ảnh JPEG để giảm kích thước tệp.",
+    "Compression RLE": "Áp dụng thuật toán nén RLE (Run-Length Encoding) để giảm kích thước dữ liệu ảnh."
+    }
+
+    # Widget chọn thuật toán
+    selected_algorithm = st.selectbox("Selected Algorithm:", list(algorithms.keys()), key="hi")
+
+    if selected_algorithm == "JPEG Process":
+        pass
+
+    if selected_algorithm == "Compression RLE":
+        pass
+
 
 
 

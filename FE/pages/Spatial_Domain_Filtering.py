@@ -1,6 +1,7 @@
 # Danh sách thuật toán
 import streamlit as st
 from FE_func import *
+from func_cv2 import *
 
 st.set_page_config(page_title="LightForge", page_icon="https://img.icons8.com/fluency/100/crafty-fox.png", layout="wide")
 
@@ -42,6 +43,15 @@ with tab1:
     
 with tab2:
     st.title("OpenCV Processing")
-    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
+    algorithms = {
+    "Contra Harmonic Mean Filter": "Áp dụng bộ lọc trung bình nghịch đảo để giảm nhiễu cụ thể."
+    }
+
+
+    # Widget chọn thuật toán
+    selected_algorithm = st.selectbox("Selected Algorithm:", list(algorithms.keys()), key="hellohello")
+
+    if selected_algorithm == "Contra Harmonic Mean Filter":
+        Contra_Harmonic_Mean_Filter_cv2()
 
 
