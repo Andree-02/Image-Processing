@@ -90,6 +90,7 @@ pip install -r requirements.txt
 Navigate to the project root directory and run the FastAPI backend server using Uvicorn:
 
 ```bash
+cd Image-Processing
 uvicorn server:app --port 8000 --reload
 ```
 
