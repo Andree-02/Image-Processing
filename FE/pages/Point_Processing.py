@@ -15,7 +15,7 @@ st.logo( name_brand, size="large", icon_image=name_brand2)
 tab1, tab2 = st.tabs(["Manual Processing", "OpenCV Processing"])
 
 with tab1:
-    st.title("Manual Processing")
+  
     algorithms = {
     "Negative Images": "Chuyển đổi ảnh thành dạng âm bản.",
     "Threshold Image": "Phân ngưỡng để chuyển đổi ảnh thành ảnh nhị phân dựa trên giá trị ngưỡng.",
@@ -47,7 +47,7 @@ with tab1:
         Bit_Plane_Slicing()
     
 with tab2:
-    st.title("OpenCV Processing")
+  
     algorithms = {
     "Threshold Image": "Phân ngưỡng để chuyển đổi ảnh thành ảnh nhị phân dựa trên giá trị ngưỡng.",
     "Bit plane Slicing": "Phân tích và hiển thị từng mặt phẳng bit của ảnh."

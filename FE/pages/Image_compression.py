@@ -15,7 +15,7 @@ st.logo( name_brand, size="large", icon_image=name_brand2)
 tab1, tab2 = st.tabs(["Manual Processing", "OpenCV Processing"])
 
 with tab1:
-    st.title("Manual Processing")
+  
     algorithms = {
     "JPEG Process": "Thực hiện nén và giải nén ảnh JPEG để giảm kích thước tệp."
     }
@@ -29,7 +29,7 @@ with tab1:
 
     
 with tab2:
-    st.title("OpenCV Processing")
+    
     
     algorithms = {
     "JPEG Process": "Thực hiện nén và giải nén ảnh JPEG để giảm kích thước tệp."

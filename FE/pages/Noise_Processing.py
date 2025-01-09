@@ -17,7 +17,7 @@ st.logo( name_brand, size="large", icon_image=name_brand2)
 tab1, tab2 = st.tabs(["Manual Processing", "OpenCV Processing"])
 
 with tab1:
-    st.title("Manual Processing")
+
     algorithms = {
     "Add Gaussian Noise": "Thêm nhiễu Gaussian vào ảnh với tham số mean và sigma.",
     "Add Uniform Noise": "Thêm nhiễu Uniform vào ảnh với các giá trị trong khoảng [low, high].",
@@ -37,7 +37,7 @@ with tab1:
         add_salt_pepper_noise()
     
 with tab2:
-    st.title("OpenCV Processing")
+
     algorithms = {
     "Add Gaussian Noise": "Thêm nhiễu Gaussian vào ảnh với tham số mean và sigma.",
     "Add Uniform Noise": "Thêm nhiễu Uniform vào ảnh với các giá trị trong khoảng [low, high]."

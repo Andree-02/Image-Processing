@@ -15,7 +15,7 @@ st.logo( name_brand, size="large", icon_image=name_brand2)
 tab1, tab2 = st.tabs(["Manual Processing", "OpenCV Processing"])
 
 with tab1:
-    st.title("Manual Processing")
+ 
     algorithms = {
     "Mean Filter": "Áp dụng bộ lọc trung bình để làm mịn ảnh bằng cách giảm nhiễu.",
     "Median Filter": "Sử dụng bộ lọc trung vị để giảm nhiễu và bảo toàn cạnh trong ảnh.",
@@ -42,7 +42,7 @@ with tab1:
 
     
 with tab2:
-    st.title("OpenCV Processing")
+ 
     algorithms = {
     "Contra Harmonic Mean Filter": "Áp dụng bộ lọc trung bình nghịch đảo để giảm nhiễu cụ thể."
     }

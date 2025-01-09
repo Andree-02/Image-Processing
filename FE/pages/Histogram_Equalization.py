@@ -13,7 +13,7 @@ st.logo( name_brand, size="large", icon_image=name_brand2)
 tab1, tab2 = st.tabs(["Manual Processing", "OpenCV Processing"])
 
 with tab1:
-    st.title("Manual Processing")
+
     algorithms = {
     "Histogram Equalization": "Cải thiện độ tương phản của ảnh thông qua phân bổ lại histogram.",
     "Histogram Matching": "Điều chỉnh histogram của ảnh để phù hợp với ảnh tham chiếu."
@@ -31,7 +31,7 @@ with tab1:
     
     
 with tab2:
-    st.title("OpenCV Processing")
+
     
     algorithms2 = {
     "Histogram Equalization": "Cải thiện độ tương phản của ảnh thông qua phân bổ lại histogram.",
