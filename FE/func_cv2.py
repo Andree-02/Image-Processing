@@ -183,7 +183,7 @@ def histogram_equalcv2():
         # Hiển thị ảnh gốc và ảnh sau xử lý trong 2 cột
         col1, col2 = st.columns(2)
         with col1:
-            st.header("Original Grayscale Image")
+            st.header("Original Image")
             st.image(grayscale_image, caption="Grayscale Image", use_container_width=True)
         with col2:
             st.header("Equalized Image")
@@ -697,7 +697,6 @@ def rawcompresscv2():
         image = np.array(Image.open(uploaded_file))
 
         # Hiển thị ảnh gốc
-        st.image(image, caption="Original Image", use_container_width=True)
 
         # Thanh trượt để chọn chất lượng nén JPEG
         qualityy = st.slider("Select JPEG Quality", min_value=0, max_value=100, value=95)
