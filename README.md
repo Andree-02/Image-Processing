@@ -24,7 +24,22 @@ This project offers two options for utilizing image processing tools:
 
 A simple demo video showcasing the core features of the Image-Processing App is available below:
 
-<video src="FE/demolightforge.mov" controls width="1100"></video>
+<div align="center">
+  <img src="assets/demo.gif"/>
+</div>
+
+---
+
+## 🖼️ Example Results
+
+Below are an example results of image processing using the app:
+- Histogram Equalization
+
+| Before | After |
+|--------|-------|
+| ![Before](assets/histogramEqualization.png) | ![After](assets/equalized_image.png) |
+
+
 
 ---
 
@@ -53,7 +68,7 @@ Follow these steps to set up the project on your local machine:
 
 ```bash
 git clone https://github.com/Andree-02/Image-Processing.git
-cd Image-Processing
+cd <repository path>
 ```
 
 ### 2. Install Dependencies
