@@ -17,8 +17,7 @@ tab1, tab2 = st.tabs(["Manual Processing", "OpenCV Processing"])
 with tab1:
     st.title("Manual Processing")
     algorithms = {
-    "JPEG Process": "Thực hiện nén và giải nén ảnh JPEG để giảm kích thước tệp.",
-    "Compression RLE": "Áp dụng thuật toán nén RLE (Run-Length Encoding) để giảm kích thước dữ liệu ảnh."
+    "JPEG Process": "Thực hiện nén và giải nén ảnh JPEG để giảm kích thước tệp."
     }
 
     # Widget chọn thuật toán
@@ -27,26 +26,20 @@ with tab1:
     if selected_algorithm == "JPEG Process":
         jpeg_process()
 
-    if selected_algorithm == "Compression RLE":
-        compression_rle()
 
     
 with tab2:
     st.title("OpenCV Processing")
     
     algorithms = {
-    "JPEG Process": "Thực hiện nén và giải nén ảnh JPEG để giảm kích thước tệp.",
-    "Compression RLE": "Áp dụng thuật toán nén RLE (Run-Length Encoding) để giảm kích thước dữ liệu ảnh."
+    "JPEG Process": "Thực hiện nén và giải nén ảnh JPEG để giảm kích thước tệp."
     }
 
     # Widget chọn thuật toán
     selected_algorithm = st.selectbox("Selected Algorithm:", list(algorithms.keys()), key="hi")
 
     if selected_algorithm == "JPEG Process":
-        pass
-
-    if selected_algorithm == "Compression RLE":
-        pass
+        rawcompresscv2()
 
 
 

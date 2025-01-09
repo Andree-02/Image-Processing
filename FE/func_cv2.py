@@ -4,6 +4,7 @@ import numpy as np
 from PIL import Image
 from io import BytesIO
 from ImageProcessingCV2 import *
+from ImageProcessingCV2 import compress_raw
 import io
 
 def display_image_info(image, label):
@@ -680,4 +681,48 @@ def otsu_cv2():
             data=byte_im,
             file_name="binary_image.png",
             mime="image/png"
+        )
+        
+
+#------------------------------------------------------------
+def rawcompresscv2():
+    # Giao diện Streamlit
+    st.header("RAW to JPEG Compression")
+
+    # Tải ảnh lên
+    uploaded_file = st.file_uploader("Upload an image (JPG/PNG)", type=["dng", "nef", "cr2", "arw", "orf"])
+
+    if uploaded_file is not None:
+        # Đọc ảnh gốc
+        image = np.array(Image.open(uploaded_file))
+
+        # Hiển thị ảnh gốc
+        st.image(image, caption="Original Image", use_container_width=True)
+
+        # Thanh trượt để chọn chất lượng nén JPEG
+        qualityy = st.slider("Select JPEG Quality", min_value=0, max_value=100, value=95)
+
+        # Áp dụng nén ảnh
+        compressed_image = compress_raw(image, qualityy)
+
+        # Giải mã ảnh JPEG từ mảng NumPy để hiển thị
+        decoded_image = cv2.imdecode(compressed_image, cv2.IMREAD_UNCHANGED)
+
+        # Hiển thị ảnh gốc và ảnh sau khi nén trong 2 cột
+        col1, col2 = st.columns(2)
+        with col1:
+            st.header("Original Image")
+            st.image(image, caption="Original Image", use_container_width=True)
+        with col2:
+            st.header("Compressed Image")
+            st.image(decoded_image, caption=f"JPEG Image (Quality: {qualityy})", use_container_width=True)
+
+        # Nút tải về ảnh nén
+        buf = BytesIO(compressed_image.tobytes())
+        st.download_button(
+            label="Download Compressed Image",
+            data=buf,
+            file_name="compressed_image.jpg",
+            mime="image/jpeg"
+            
         )

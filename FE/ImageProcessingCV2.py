@@ -72,3 +72,15 @@ def opening(image, kernel_size):
 def otsu_thresholding(image):
     _, binary_image = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     return binary_image
+
+def compress_raw(image_array, quality=95):
+    # Step 1: Encode the image to JPEG format using OpenCV
+    success, encoded_image = cv2.imencode('.jpg', image_array, [int(cv2.IMWRITE_JPEG_QUALITY), quality])
+
+    if not success:
+        raise ValueError("Failed to encode image to JPEG format.")
+
+    # Step 2: Convert the encoded image to a NumPy array
+    compressed_image = np.frombuffer(encoded_image, dtype=np.uint8)
+
+    return compressed_image
