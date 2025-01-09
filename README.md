@@ -58,6 +58,8 @@ Additional libraries for image processing and machine learning include:
 - Scikit-image
 - Pillow
 
+**Recommended Python Version:**
+- It is highly recommended to use **Python 3.10.0** for the best compatibility and performance.
 ---
 
 ## 📝 Installation Guide
@@ -133,7 +135,6 @@ For any inquiries, feel free to reach out:
 
 - **Project Maintainer:** [Andree-02](https://github.com/Andree-02)
 - **Email:** [trantientoan.wk@gmail.com](mailto:trantientoan.wk@gmail.com)
-- **GitHub:** [https://github.com/Andree-02](https://github.com/Andree-02)
 
 ---
 
